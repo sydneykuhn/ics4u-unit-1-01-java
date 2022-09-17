@@ -32,13 +32,16 @@ final class logCalculator {
     * @param args No args will be used
     */
     public static void main(final String[] args) {
+	final float truckCapacity = 1100;
+	final float mapleWeight = 20;
+
 	final Console console = System.console();
         final String logLengthString = console.readLine(
 		"How long are the logs in meters : ");
 
         final float logLength = Float.valueOf(logLengthString);
 
-        final float logAmount = 1100 / (20 * logLength);
+        final float logAmount = truckCapacity / (mapleWeight * logLength);
 
 	// print out answer
 	System.out.println(
