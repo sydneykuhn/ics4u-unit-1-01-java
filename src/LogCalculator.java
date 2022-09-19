@@ -10,10 +10,18 @@
 import java.io.Console;
 
 /**
-* This is the standard "Hello, World!" program.
+* This is the log calculator program.
 */
-final class logCalculator {
+final class LogCalculator {
+    /**
+     * Maximum capacity of the truck
+     */
+    public static final float truckCapacity = 1100;
 
+    /**
+     * Average weight of maple logs
+     */
+    public static final float mapleWeight = 20;
     /**
     * Prevent instantiation.
     * Throw an exception IllegalStateException.
@@ -22,8 +30,8 @@ final class logCalculator {
     * @throws IllegalStateException
     *
     */
-    private logCalculator() {
-	throw new IllegalStateException("Cannot be instantiated");
+    private LogCalculator() {
+        throw new IllegalStateException("Cannot be instantiated");
     }
 
     /**
@@ -32,21 +40,18 @@ final class logCalculator {
     * @param args No args will be used
     */
     public static void main(final String[] args) {
-	final float truckCapacity = 1100;
-	final float mapleWeight = 20;
 
-	final Console console = System.console();
+        final Console console = System.console();
         final String logLengthString = console.readLine(
-		"How long are the logs in meters : ");
+                "How long are the logs in meters : ");
 
         final float logLength = Float.valueOf(logLengthString);
 
         final float logAmount = truckCapacity / (mapleWeight * logLength);
 
-	// print out answer
-	System.out.println(
-		logAmount + " is the maximum amount of " + logLength + "m logs.");
+        // print out answer
+        System.out.println(
+                logAmount + " is the maximum amount of " + logLength + "m logs.");
         System.out.println("\nDone.");
     }
 }
-
